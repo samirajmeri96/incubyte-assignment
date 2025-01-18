@@ -14,7 +14,7 @@ class StringCalculator
         if (empty($numberString)) {
             return 0;
         }
-
-        return (int)$numberString;
+        $numbers = explode(',', $numberString);
+        return array_sum($numbers);
     }
 }

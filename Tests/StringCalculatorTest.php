@@ -26,4 +26,14 @@ class StringCalculatorTest extends TestCase
         $calculator = new StringCalculator();
         $this->assertEquals(1, $calculator->add("1"));
     }
+
+    /**
+     * Method used to test string calculator with comma separated number return sum of their.
+     * @return void
+     */
+    public function testCommaSeparatedNumbersReturnTheirSum(): void
+    {
+        $calculator = new StringCalculator();
+        $this->assertEquals(5, $calculator->add('2,3'));
+    }
 }
