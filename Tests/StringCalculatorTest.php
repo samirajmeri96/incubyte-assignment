@@ -46,4 +46,14 @@ class StringCalculatorTest extends TestCase
         $calculator = new StringCalculator();
         $this->assertEquals(7, $calculator->add("1\n2,3\n1"));
     }
+
+    /**
+     * Method used to test custom delimiter separated numbers.
+     * @return void
+     */
+    public function testCustomDelimiterSeparatedNumbersReturnTheirSum(): void
+    {
+        $calculator = new StringCalculator();
+        $this->assertEquals(11, $calculator->add("//;\n1,2\n3,4;1"));
+    }
 }

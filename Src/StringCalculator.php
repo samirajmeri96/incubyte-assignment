@@ -14,7 +14,7 @@ class StringCalculator
         if (empty($numberString)) {
             return 0;
         }
-        $numberString = str_replace("\n", ",", $numberString);
+        $numberString = preg_replace("/(\/\/|\/\/;|;|,|\\n)/", ",", $numberString);
         $numbers = explode(',', $numberString);
         return array_sum(array_map('intval', $numbers));
     }
