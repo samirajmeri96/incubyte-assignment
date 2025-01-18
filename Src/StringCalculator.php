@@ -14,6 +14,7 @@ class StringCalculator
         if (empty($numberString)) {
             return 0;
         }
-        return '';
+
+        return (int)$numberString;
     }
 }
