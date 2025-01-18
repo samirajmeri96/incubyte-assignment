@@ -56,4 +56,16 @@ class StringCalculatorTest extends TestCase
         $calculator = new StringCalculator();
         $this->assertEquals(11, $calculator->add("//;\n1,2\n3,4;1"));
     }
+
+    /**
+     * Method used to test handle negative numbers exception.
+     * @return void
+     */
+    public function testHandleNegativeValueException(): void
+    {
+        $calculator = new StringCalculator();
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Negative numbers not allowed: -1,-2');
+        $calculator->add("1,-1,-2");
+    }
 }

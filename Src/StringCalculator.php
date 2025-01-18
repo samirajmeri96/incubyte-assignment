@@ -16,6 +16,10 @@ class StringCalculator
         }
         $numberString = preg_replace("/(\/\/|\/\/;|;|,|\\n)/", ",", $numberString);
         $numbers = explode(',', $numberString);
+        $negativeNumbers = array_filter($numbers, fn($n) => (int)$n < 0);
+        if (!empty($negativeNumbers)) {
+            throw new \Exception('Negative numbers not allowed: '.implode(',', $negativeNumbers));
+        }
         return array_sum(array_map('intval', $numbers));
     }
 }
