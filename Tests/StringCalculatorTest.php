@@ -36,4 +36,14 @@ class StringCalculatorTest extends TestCase
         $calculator = new StringCalculator();
         $this->assertEquals(5, $calculator->add('2,3'));
     }
+
+    /**
+     * Method used to test handle of new line separators.
+     * @return void
+     */
+    public function testNewLineSeparatedNumbersReturnTheirSum(): void
+    {
+        $calculator = new StringCalculator();
+        $this->assertEquals(7, $calculator->add("1\n2,3\n1"));
+    }
 }
