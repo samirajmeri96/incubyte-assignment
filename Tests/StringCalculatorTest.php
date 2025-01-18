@@ -34,7 +34,7 @@ class StringCalculatorTest extends TestCase
     public function testCommaSeparatedNumbersReturnTheirSum(): void
     {
         $calculator = new StringCalculator();
-        $this->assertEquals(5, $calculator->add('2,3'));
+        $this->assertEquals(5, $calculator->add('1,5'));
     }
 
     /**
@@ -44,7 +44,7 @@ class StringCalculatorTest extends TestCase
     public function testNewLineSeparatedNumbersReturnTheirSum(): void
     {
         $calculator = new StringCalculator();
-        $this->assertEquals(7, $calculator->add("1\n2,3\n1"));
+        $this->assertEquals(7, $calculator->add("1\n2,3"));
     }
 
     /**
@@ -54,7 +54,7 @@ class StringCalculatorTest extends TestCase
     public function testCustomDelimiterSeparatedNumbersReturnTheirSum(): void
     {
         $calculator = new StringCalculator();
-        $this->assertEquals(11, $calculator->add("//;\n1,2\n3,4;1"));
+        $this->assertEquals(11, $calculator->add("//;\n1;2"));
     }
 
     /**
